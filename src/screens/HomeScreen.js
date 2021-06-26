@@ -1,14 +1,37 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 
-const HomeScreen = () => {
-  return <Text style={styles.text}>HomeScreen</Text>;
+const HomeScreen = ({navigation}) => {
+  return (
+    <View>
+      <Text style={styles.textStyle}>HomeScreen1</Text>
+      <Button
+        onPress={() => navigation.navigate('Components')}
+        title="Go to component screen"
+      />
+      <Button
+      onPress={()=> navigation.navigate('List')}
+      title="Go to list screen"
+      />
+       <Button
+      onPress={()=> navigation.navigate('Image')}
+      title="Go to image screen"
+      />
+      {/* <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate('List')
+        }}
+      >
+        <Text>Go to list screen</Text>
+      </TouchableOpacity> */}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 30
-  }
+  textStyle: {
+    fontSize: 40,
+  },
 });
 
 export default HomeScreen;
